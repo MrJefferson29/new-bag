@@ -29,7 +29,7 @@ const Profile = () => {
             setLoading(true)
 
             try {
-                const { data } = await axios.get("https://vishis-mauve.vercel.app/user/profile", config)
+                const { data } = await axios.get("https://new-bag.onrender.com/user/profile", config)
 
                 setUser(data.data)
 

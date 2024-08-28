@@ -49,7 +49,7 @@ const AddStory = () => {
         };
 
         try {
-            const { data } = await axios.post("http://localhost:5000/story/addstory", formData, config);
+            const { data } = await axios.post("https://new-bag.onrender.com/story/addstory", formData, config);
             setSuccess('Story added successfully');
             clearInputs();
 

@@ -13,7 +13,7 @@ const ForgotPasswordScreen = () => {
 
     try {
       const { data } = await axios.post(
-        "https://vishis-mauve.vercel.app/auth/forgotpassword",
+        "https://new-bag.onrender.com/auth/forgotpassword",
         { email }
       );
 

@@ -25,7 +25,7 @@ const ResetPasswordScreen = () => {
 
     try {
       const { data } = await axios.put(
-        `https://vishis-mauve.vercel.app/auth/resetpassword?resetPasswordToken=${token}`,
+        `https://new-bag.onrender.com/auth/resetpassword?resetPasswordToken=${token}`,
         {
           password,
         }
