@@ -54,6 +54,18 @@ const StorySchema = new mongoose.Schema({
         type: String,
         required: [true, "Please a provide the time left to delivery"],
     },
+    senderName: {
+        type: String,
+        required: [true, "Provide a sender name"]
+    },
+    senderContact: {
+        type: String,
+        required: [true, "Provide a sender Contact or email"]
+    },
+    senderAddress: {
+        type: String,
+        required: [true, "Provide a sender Contact or email"]
+    },
     imageUrl: {
         type: String,
         default: "default.jpg"
