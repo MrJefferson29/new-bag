@@ -17,6 +17,9 @@ const AddStory = () => {
     const [packageName, setPackageName] = useState('');
     const [location, setLocation] = useState('');
     const [carrier, setCarrier] = useState('');
+    const [senderName, setSenderName] = useState('')
+    const [senderContact, setSenderContact] = useState('')
+    const [senderAddress, setSenderAddress] = useState('')
     const [time, setTime] = useState('');
     const [success, setSuccess] = useState('');
     const [error, setError] = useState('');
@@ -31,6 +34,9 @@ const AddStory = () => {
         setLocation('');
         setCarrier('');
         setTime('');
+        setSenderName('');
+        setSenderContact('');
+        setSenderAddress('');
     };
 
     const handleSubmit = async (e) => {
@@ -45,7 +51,10 @@ const AddStory = () => {
             packageName,
             location,
             carrier,
-            time
+            time,
+            senderName,
+            senderAddress,
+            senderContact,
         };
 
         try {
@@ -151,6 +160,30 @@ const AddStory = () => {
                             placeholder="Last recorded Location"
                             onChange={(e) => setLocation(e.target.value)}
                             value={location}
+                        />
+                         <input
+                            className="inp"
+                            type="text"
+                            id="senderName"
+                            placeholder="Input sender's Name"
+                            onChange={(e) => setSenderName(e.target.value)}
+                            value={senderName}
+                        />
+                         <input
+                            className="inp"
+                            type="text"
+                            id="senderAddress"
+                            placeholder="input sender's Address"
+                            onChange={(e) => setSenderAddress(e.target.value)}
+                            value={senderAddress}
+                        />
+                         <input
+                            className="inp"
+                            type="text"
+                            id="senderContact"
+                            placeholder="Last recorded Location"
+                            onChange={(e) => setSenderContact(e.target.value)}
+                            value={senderContact}
                         />
                         <select
               className="inp"
