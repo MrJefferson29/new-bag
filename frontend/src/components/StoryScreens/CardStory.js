@@ -9,9 +9,7 @@ const Story = ({ story }) => {
         <Container className="story-content">
           <Row>
             <Col md="12">
-              <h2 className="story-heading">
-                Tracking Information
-              </h2>
+              <h2 className="story-heading">Tracking Information</h2>
               <p className="tracking-id">
                 Tracking ID: <span>{story.title}</span>
               </p>
@@ -33,7 +31,6 @@ const Story = ({ story }) => {
               <p>
                 <strong>Package Weight:</strong> {story.weight}
               </p>
-
             </Col>
             <Col md="6">
               <h4>Transit Information</h4>
@@ -48,6 +45,22 @@ const Story = ({ story }) => {
               </p>
               <p>
                 <strong>Expected Delivery:</strong> {story.time}
+              </p>
+            </Col>
+          </Row>
+
+          {/* Sender Information Section */}
+          <Row className="sender-info">
+            <Col md="12">
+              <h4>Sender Information</h4>
+              <p>
+                <strong>Sender's Name:</strong> {story.senderName}
+              </p>
+              <p>
+                <strong>Sender's Contact:</strong> {story.senderContact}
+              </p>
+              <p>
+                <strong>Sender's Address:</strong> {story.senderAddress}
               </p>
             </Col>
           </Row>
@@ -117,28 +130,23 @@ const Styles = styled.div`
     color: #007bff;
   }
 
-  .story-details h4 {
+  .story-details h4,
+  .sender-info h4,
+  .additional-info h4 {
     font-size: 1.5rem;
     color: #343a40;
     margin-bottom: 20px;
   }
 
-  .story-details p {
+  .story-details p,
+  .sender-info p,
+  .additional-info p {
     font-size: 1.1rem;
     color: #495057;
     margin-bottom: 10px;
   }
 
-  .additional-info h4 {
-    font-size: 1.5rem;
-    color: #343a40;
-    margin-top: 40px;
-    margin-bottom: 20px;
-  }
-
-  .notes {
-    font-size: 1.1rem;
-    color: #495057;
+  .additional-info .notes {
     margin-bottom: 10px;
   }
 
