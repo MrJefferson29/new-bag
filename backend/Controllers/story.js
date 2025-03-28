@@ -6,7 +6,7 @@ const {searchHelper, paginateHelper} =require("../Helpers/query/queryHelpers")
 
 
 const addStory = async (req, res, next) => {
-    const { title, content, address, status, time, packageName, location, weight, carrier } = req.body;
+    const { title, content, address, status, time, packageName, location, weight, carrier, senderName, senderContact, senderAddress } = req.body;
 
     const wordCount = content.trim().split(/\s+/).length;
     const readtime = Math.floor(wordCount / 200);
@@ -25,6 +25,9 @@ const addStory = async (req, res, next) => {
             carrier,
             author: req.user._id,
             readtime,
+            senderContact,
+            senderName,
+            senderAddress
         });
 
         return res.status(200).json({
@@ -137,7 +140,7 @@ const editStoryPage  =asyncErrorWrapper(async(req,res,next)=>{
 
 const editStory  =asyncErrorWrapper(async(req,res,next)=>{
     const {slug } = req.params ; 
-    const {title ,content, address, status, time, packageName, location, weight, carrier } = req.body;
+    const {title ,content, address, status, time, packageName, location, weight, carrier, senderName, senderContact } = req.body;
 
     const story = await Story.findOne({slug : slug })
 
@@ -150,6 +153,8 @@ const editStory  =asyncErrorWrapper(async(req,res,next)=>{
     story.location = location;
     story.weight = weight;
     story.carrier = carrier;
+    story.senderContact = senderContact;
+    story.senderName = senderName
 
 
 
